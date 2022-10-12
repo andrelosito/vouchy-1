@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOUCHY - Sign In / Sign Up</title>
+
+
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--Custom CSS for Moving Form-->
+    <link rel="stylesheet" href="resources/style_login.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/aa9354d7b1.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body onpageshow="if (event.persisted) preventBack();" onUnload="" style="background: url(https://restaurantengine.com/wp-content/uploads/2015/05/startup-restaurants-typically-overspend.jpg); min-height: 100vh;"
+    class="jumbotron bg-cover bg-dark">
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="social-container">
+
+
+                </div>
+
+                <input type="text" id="registerName" placeholder="Name" />
+                <input type="email" id="registerEmail" placeholder="Email" />
+                <input type="password" id="registerPassword" placeholder="Password" />
+                <button onclick="RegisterUser()">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign In</h1>
+                <div class="social-container">
+
+                </div>
+
+                <input type="email" name="loginEmail" id="loginEmail" placeholder="Email" />
+                <input type="password" name="loginPassword" id="loginPassword" placeholder="Password" />
+                <a href="#" name="forgotpass" id="forgotpass">Forgot your password?</a>
+                <button onclick="LoginUser()">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 style="font-style: italic; color: #212529;"><i class="fa fa-ticket"></i> VOUCHY</h1>
+                    <br><br>
+                    <h1>Already have an account?</h1>
+                    <p>Good to see you back! Check our amazing deals!</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 style="font-style: italic; color: #212529;"><i class="fa fa-ticket"></i> VOUCHY</h1>
+                    <br><br>
+                    <h1>Do not have an account?</h1>
+                    <p>Ready to get awesome deals? Enter your personal details now!</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCdFZxwtDUpa7s2y5xS9tQeC5QEvFVFIhg",
+            authDomain: "trealdeals-e98de.firebaseapp.com",
+            projectId: "trealdeals-e98de",
+            storageBucket: "trealdeals-e98de.appspot.com",
+            messagingSenderId: "440810939341",
+            appId: "1:440810939341:web:f272c3cab1e295bfe8da84",
+            measurementId: "G-F1G452H14W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        // Initialize Firebase
+    </script>
+    <script src="login.js"></script>
+</body>
+
+</html>
